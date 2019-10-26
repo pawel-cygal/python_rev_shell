@@ -11,7 +11,7 @@ import sys
 
 
 def usage():
-    print 'USAGE: %s <ip_or_fqdn> <port_number>' % sys.argv[0]
+    print ('USAGE: %s <ip_or_fqdn> <port_number>') % sys.argv[0]
 
 
 def start_rev_shell(ip, port):
@@ -24,14 +24,12 @@ def start_rev_shell(ip, port):
     return p
 
 
-def main():
+if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print 'Err: Something went wrong. Did you check usage ?'
+        print ('Err: Something went wrong. Did you check usage ?')
         usage()
         sys.exit(1)
     else:
         ip = sys.argv[1]
         port = int(sys.argv[2])
         start_rev_shell(ip, port)
-
-main()
